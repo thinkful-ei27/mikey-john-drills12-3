@@ -89,3 +89,32 @@ function daysInMonth(month, leapYear){
 
 
 console.log(daysInMonth('June'));
+
+function roShamBo(num){
+    const randomNo = Math.floor(Math.random() * 3) + 1;
+  console.log(`Computer chose ${randomNo}, you chose ${num}`);
+      if ( num === randomNo){ 
+        return 'Tie game, pick another number'
+    }
+    if( num === 1 && randomNo === 2){
+        return `you lose`
+    }
+    if( num === 2 && randomNo === 3){
+        return `you lose`
+    }
+    if( num === 3 && randomNo === 1){
+        return `you lose`
+    }
+    if(num>3 || num<1){
+        throw new Error(' Pick 1, 2 ,or 3')
+    }
+    return 'You win!'
+    }
+
+try{
+    console.log(roShamBo(3));
+}
+catch(e){console.log(e.message);
+}
+
+
