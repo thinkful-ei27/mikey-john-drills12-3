@@ -23,3 +23,38 @@ function beyond(num) {
 }
 
 console.log(beyond(0));
+
+function decode(word) {
+    // a = 2
+    // b = 3
+    // c = 4
+    // d = 5
+
+    if (word[0] === 'a') return word[1];
+    if (word[0] === 'b') return word[2];
+    if (word[0] === 'c') return word[3];
+    if (word[0] === 'd') return word[4];
+    return ' ';
+}
+
+console.log(decode('apple'));
+
+function decoder(string) {
+    let strArray = string.split(' ');
+    let message = '';
+    for (let strings in strArray) {
+        message = message.concat(decode(strArray[strings]));
+    }
+    return message;
+}
+
+function decoder2(string) {
+    let strArray = string.split(' ');
+    let message = '';
+    for (let i=0; i<strArray.length; i++) {
+        message = message.concat(decode(strArray[i]));
+    }
+    return message;
+}
+
+console.log(decoder2('craft block argon meter bells brown croon droop'));
